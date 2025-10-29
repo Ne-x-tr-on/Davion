@@ -19,7 +19,7 @@ export const Navbar = () => {
               <span className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent">
                 Davion
               </span>
-              <span className="text-xs text-muted-foreground">by Neza</span>
+              <span className="text-xs text-muted-foreground"></span>
             </div>
           </Link>
 
