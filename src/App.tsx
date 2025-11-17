@@ -15,13 +15,13 @@ import NotFound from "./pages/NotFound";
 
 // Topics
 import Topics from "./pages/topics";            // picks up index.tsx
-import Mechanical from "./pages/topics/mechanical"; // picks up index.tsx in mechanical folder
-import MechanicalGears from "./pages/topics/mechanical/gears";
-import Electrical from "./pages/topics/electrical";
-import Arduino from "./pages/topics/arduino";
-import Automation from "./pages/topics/automation";
-import Embedded from "./pages/topics/embedded";
-import SoftwareAI from "./pages/topics/software-ai";
+import Mechanical from "./pages/Topics/mechanical"; // picks up index.tsx in mechanical folder
+import MechanicalGears from "./pages/Topics/Mechanical/gears";
+import Electrical from "./pages/Topics/electrical";
+import Arduino from "./pages/Topics/arduino";
+import Automation from "./pages/Topics/automation";
+import Embedded from "./pages/Topics/embedded";
+import SoftwareAI from "./pages/Topics/software-ai";
 
 
 // Initialize React Query client

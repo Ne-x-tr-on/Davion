@@ -89,7 +89,7 @@ const Index = () => {
               Join Davion – where creativity meets opportunity. Showcase your projects, discover
               cutting-edge hardware, and launch your career.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="accent" size="lg" className="text-lg">
                 Get Started <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -100,7 +100,7 @@ const Index = () => {
               >
                 Explore Projects
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

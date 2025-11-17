@@ -27,7 +27,7 @@ export const Navbar = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-                Davion
+                Davion - Mechatronics Workshop
               </span>
             </div>
           </Link>
