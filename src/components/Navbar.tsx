@@ -105,14 +105,14 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop Auth Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* <div className="hidden md:flex items-center gap-3">
             <Button variant="ghost" size="sm" className="text-sm">
               Login
             </Button>
             <Button variant="hero" size="sm" className="text-sm">
               Get Started
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -200,7 +200,7 @@ export const Navbar = () => {
               </Link>
 
               {/* Mobile Auth Buttons */}
-              <div className="flex flex-col gap-2 pt-4 mt-4 border-t border-border">
+              {/* <div className="flex flex-col gap-2 pt-4 mt-4 border-t border-border">
                 <Button
                   variant="ghost"
                   className="w-full justify-center py-3"
@@ -215,7 +215,7 @@ export const Navbar = () => {
                 >
                   Get Started
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         )}

@@ -18,7 +18,7 @@ import NotFound from "./pages/notfound";
 import Topics from "./pages/topics";
 import Mechanical from "./pages/topics/mechanical";
 import MechanicalGears from "./pages/topics/mechanical/gears";
-import Pneumatics from "./pages/topics/mechanical/pneumatics";
+import Pneumatics from "./pages/topics/mechanical/pneumatics/pneumatics";
 
 
 import Electrical from "./pages/topics/electrical";
