@@ -18,6 +18,9 @@ import NotFound from "./pages/notfound";
 import Topics from "./pages/topics";
 import Mechanical from "./pages/topics/mechanical";
 import MechanicalGears from "./pages/topics/mechanical/gears";
+import Pneumatics from "./pages/topics/mechanical/pneumatics";
+
+
 import Electrical from "./pages/topics/electrical";
 import Arduino from "./pages/topics/arduino";
 import Automation from "./pages/topics/automation";
