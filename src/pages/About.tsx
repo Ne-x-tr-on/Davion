@@ -134,7 +134,7 @@ const About = () => {
                 >
                   <div className="aspect-square overflow-hidden">
                     <img
-                      src={member.image}
+                      // src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                     />
