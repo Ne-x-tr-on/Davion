@@ -1,42 +1,51 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowLeft, Cog } from "lucide-react";
 
 const gearsDetails = [
   {
+    id: "spur-gear",
     name: "Spur Gear",
     description:
-      "Spur gears are the most common type of gears. They have straight teeth and are used to transmit motion between parallel shafts.",
-    features: ["Straight teeth", "Parallel shafts", "Simple design", "High efficiency"],
-    applications: ["Clocks", "Washing machines", "Conveyor systems", "Manual transmissions"],
+      "Spur gears are the most common type of gears. They have straight teeth and are used to transmit motion between parallel shafts. They offer high efficiency and are simple to manufacture.",
+    features: ["Straight teeth", "Parallel shafts", "Simple design", "High efficiency", "Easy to manufacture"],
+    applications: ["Clocks", "Washing machines", "Conveyor systems", "Manual transmissions", "Printing presses"],
     complexity: "Low",
     efficiency: "High",
-    image: "/images/gears/spur-gear.jpg" // Add your image path here
+    image: "/images/gears/spur-gear.jpg"
   },
   {
+    id: "helical-gear",
     name: "Helical Gear",
     description:
-      "Helical gears have angled teeth, which makes them run smoother and quieter than spur gears. Suitable for high-speed applications.",
-    features: ["Angled teeth", "Smooth operation", "High load capacity", "Quieter than spur gears"],
-    applications: ["Automotive transmissions", "Industrial machinery", "High-speed applications"],
+      "Helical gears have angled teeth, which makes them run smoother and quieter than spur gears. Suitable for high-speed applications and heavy load conditions.",
+    features: ["Angled teeth", "Smooth operation", "High load capacity", "Quieter than spur gears", "Gradual engagement"],
+    applications: ["Automotive transmissions", "Industrial machinery", "High-speed applications", "Marine propulsion"],
     complexity: "Medium",
     efficiency: "High",
     image: "/images/gears/helical-gear.jpg"
   },
   {
+    id: "bevel-gear",
     name: "Bevel Gear",
     description:
-      "Bevel gears are conical in shape and are used to transmit motion between intersecting shafts, usually at 90 degrees.",
-    features: ["Conical shape", "Intersecting shafts", "Right angle transmission", "Various tooth types"],
-    applications: ["Differentials", "Hand drills", "Printing presses", "Marine applications"],
+      "Bevel gears are conical in shape and are used to transmit motion between intersecting shafts, usually at 90 degrees. Perfect for changing the direction of power transmission.",
+    features: ["Conical shape", "Intersecting shafts", "Right angle transmission", "Various tooth types", "High precision"],
+    applications: ["Differentials", "Hand drills", "Printing presses", "Marine applications", "Power tools"],
     complexity: "Medium",
     efficiency: "Medium",
     image: "/images/gears/bevel-gear.jpg"
   },
   {
+    id: "worm-gear",
     name: "Worm Gear",
     description:
-      "Worm gears consist of a screw (worm) and a gear (worm wheel). They can achieve high reduction ratios and transmit torque at right angles.",
-    features: ["High reduction ratios", "Self-locking capability", "Right angle drive", "Compact design"],
-    applications: ["Elevators", "Conveyor systems", "Tuning instruments", "Packaging machinery"],
+      "Worm gears consist of a screw (worm) and a gear (worm wheel). They can achieve high reduction ratios and transmit torque at right angles with self-locking capability.",
+    features: ["High reduction ratios", "Self-locking capability", "Right angle drive", "Compact design", "Smooth operation"],
+    applications: ["Elevators", "Conveyor systems", "Tuning instruments", "Packaging machinery", "Gate operators"],
     complexity: "High",
     efficiency: "Low",
     image: "/images/gears/worm-gear.jpg"
@@ -98,135 +107,142 @@ const Gears: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-            <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center mb-4 sm:mb-6">
+            <Link
+              to="/topics/mechanical"
+              className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors mr-4"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              <span className="text-sm font-medium">Back to Mechanical</span>
+            </Link>
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full">
+              <Cog className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Gear Types
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore different types of mechanical gears, their features, applications, and characteristics
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
+            Explore different types of mechanical gears, their features, applications, and characteristics in mechanical systems
           </p>
         </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-          <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-            <div className="text-2xl font-bold text-blue-600">{gearsDetails.length}</div>
-            <div className="text-sm text-gray-600">Gear Types</div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
+          <div className="bg-white rounded-xl p-3 sm:p-4 text-center shadow-sm border">
+            <div className="text-xl sm:text-2xl font-bold text-blue-600">{gearsDetails.length}</div>
+            <div className="text-xs sm:text-sm text-gray-600">Gear Types</div>
           </div>
-          <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-            <div className="text-2xl font-bold text-green-600">4</div>
-            <div className="text-sm text-gray-600">Complexity Levels</div>
+          <div className="bg-white rounded-xl p-3 sm:p-4 text-center shadow-sm border">
+            <div className="text-xl sm:text-2xl font-bold text-green-600">3</div>
+            <div className="text-xs sm:text-sm text-gray-600">Complexity Levels</div>
           </div>
-          <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-            <div className="text-2xl font-bold text-purple-600">15+</div>
-            <div className="text-sm text-gray-600">Applications</div>
+          <div className="bg-white rounded-xl p-3 sm:p-4 text-center shadow-sm border">
+            <div className="text-xl sm:text-2xl font-bold text-purple-600">15+</div>
+            <div className="text-xs sm:text-sm text-gray-600">Applications</div>
           </div>
-          <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-            <div className="text-2xl font-bold text-orange-600">High</div>
-            <div className="text-sm text-gray-600">Efficiency Range</div>
+          <div className="bg-white rounded-xl p-3 sm:p-4 text-center shadow-sm border">
+            <div className="text-xl sm:text-2xl font-bold text-orange-600">High</div>
+            <div className="text-xs sm:text-sm text-gray-600">Efficiency Range</div>
           </div>
         </div>
 
         {/* Gears Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {gearsDetails.map((gear, index) => (
-            <div
-              key={gear.name}
-              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden ${
+            <Card
+              key={gear.id}
+              className={`group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white ${
                 selectedGear === gear.name ? 'ring-2 ring-blue-500' : ''
               }`}
               onMouseEnter={() => setSelectedGear(gear.name)}
               onMouseLeave={() => setSelectedGear(null)}
             >
-              {/* Card Header with Image */}
-              <div className="relative">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-2xl sm:text-3xl font-bold">{gear.name}</h2>
-                    <div className="flex items-center space-x-2">
-                      <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-medium">
-                        {gear.complexity} Complexity
-                      </span>
-                    </div>
+              {/* Card Header with Gradient */}
+              <CardHeader className="p-0">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 sm:p-6 text-white">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
+                    <h2 className="text-xl sm:text-2xl font-bold">{gear.name}</h2>
+                    <Badge
+                      className={`w-fit ${
+                        gear.complexity === "Low" ? "bg-green-500" :
+                        gear.complexity === "Medium" ? "bg-yellow-500" :
+                        "bg-red-500"
+                      }`}
+                    >
+                      {gear.complexity} Complexity
+                    </Badge>
                   </div>
-                  <div className="w-12 h-1 bg-blue-300 rounded-full mt-3"></div>
+                  <div className="w-12 h-1 bg-blue-300 rounded-full mt-2 sm:mt-3"></div>
                 </div>
+              </CardHeader>
 
-                {/* Gear Image Section */}
-                <div className="relative h-48 sm:h-56 bg-gray-100 overflow-hidden">
-                  {gear.image && !imageError[gear.name] ? (
-                    <img
-                      src={gear.image}
-                      alt={gear.name}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      onError={() => handleImageError(gear.name)}
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                      {getGearIcon(gear.name)}
-                    </div>
-                  )}
-
-                  {/* Image overlay with gear type */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                    <h3 className="text-white font-semibold text-lg">{gear.name}</h3>
+              {/* Gear Image Section */}
+              <div className="relative h-48 sm:h-56 bg-gray-100 overflow-hidden">
+                {gear.image && !imageError[gear.name] ? (
+                  <img
+                    src={gear.image}
+                    alt={gear.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={() => handleImageError(gear.name)}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                    {getGearIcon(gear.name)}
                   </div>
+                )}
 
-                  {/* Efficiency badge on image */}
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium text-white ${
+                {/* Efficiency badge on image */}
+                <div className="absolute top-3 right-3">
+                  <Badge
+                    className={
                       gear.efficiency === "High" ? "bg-green-500" :
                       gear.efficiency === "Medium" ? "bg-yellow-500" :
                       "bg-red-500"
-                    }`}>
-                      {gear.efficiency} Efficiency
-                    </span>
-                  </div>
+                    }
+                  >
+                    {gear.efficiency} Efficiency
+                  </Badge>
                 </div>
               </div>
 
               {/* Card Content */}
-              <div className="p-6">
-                <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              <CardContent className="p-4 sm:p-6">
+                <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                   {gear.description}
                 </p>
 
                 {/* Features & Applications */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 className="font-semibold text-gray-900 mb-2 sm:mb-3 flex items-center text-sm sm:text-base">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       Key Features
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className="space-y-1 sm:space-y-2">
                       {gear.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-gray-600">
-                          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                        <li key={idx} className="flex items-center text-gray-600 text-sm">
+                          <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <svg className="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 className="font-semibold text-gray-900 mb-2 sm:mb-3 flex items-center text-sm sm:text-base">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
-                      Common Applications
+                      Applications
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className="space-y-1 sm:space-y-2">
                       {gear.applications.map((application, idx) => (
-                        <li key={idx} className="flex items-center text-gray-600">
-                          <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                        <li key={idx} className="flex items-center text-gray-600 text-sm">
+                          <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                           {application}
                         </li>
                       ))}
@@ -235,10 +251,10 @@ const Gears: React.FC = () => {
                 </div>
 
                 {/* Efficiency Bar */}
-                <div className="bg-gray-50 rounded-lg p-4 border">
+                <div className="bg-gray-50 rounded-lg p-3 sm:p-4 border">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium text-gray-700">Efficiency Rating:</span>
-                    <span className="font-semibold text-blue-600">{gear.efficiency}</span>
+                    <span className="font-medium text-gray-700 text-sm sm:text-base">Efficiency Rating:</span>
+                    <span className="font-semibold text-blue-600 text-sm sm:text-base">{gear.efficiency}</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
@@ -252,23 +268,27 @@ const Gears: React.FC = () => {
                     ></div>
                   </div>
                 </div>
-              </div>
+              </CardContent>
 
               {/* Card Footer */}
-              <div className="bg-gray-50 px-6 py-4 border-t">
-                <div className="flex items-center justify-between text-sm text-gray-600">
+              <CardFooter className="p-4 sm:p-6 pt-0">
+                <div className="flex items-center justify-between text-xs sm:text-sm text-gray-600 w-full">
                   <span>Mechanical Engineering</span>
-                  <span>Gear #{String(index + 1).padStart(2, '0')}</span>
+                  <Link
+                    to={`/topics/mechanical/gears/${gear.id}`}
+                    className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                  >
+                    Learn More →
+                  </Link>
                 </div>
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           ))}
         </div>
 
-        {/* Image Help Text */}
+        {/* Additional Info */}
         <div className="text-center mt-8 text-gray-500 text-sm">
-          <p>💡 <strong>Image Setup:</strong> Add your gear images to <code>/public/images/gears/</code> folder</p>
-          <p className="mt-1">Required files: spur-gear.jpg, helical-gear.jpg, bevel-gear.jpg, worm-gear.jpg</p>
+          <p>💡 <strong>Did you know?</strong> Gears can achieve efficiency up to 98% in properly designed systems</p>
         </div>
       </div>
     </div>

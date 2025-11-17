@@ -1,89 +1,116 @@
-// src/pages/topics/mechanical/gears/index.tsx
-import React from "react";
-import { Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-
-const gearTypes = [
-  {
-    id: "spur-gear",
-    name: "Spur Gear",
-    description: "Straight teeth gears for parallel shaft transmission",
-    image: "/images/gears/spur-gear.jpg",
-    category: "Basic Gears"
-  },
-  {
-    id: "helical-gear",
-    name: "Helical Gear",
-    description: "Angled teeth for smoother and quieter operation",
-    image: "/images/gears/helical-gear.jpg",
-    category: "Basic Gears"
-  },
-  {
-    id: "bevel-gear",
-    name: "Bevel Gear",
-    description: "Conical gears for intersecting shafts",
-    image: "/images/gears/bevel-gear.jpg",
-    category: "Angle Gears"
-  },
-  {
-    id: "worm-gear",
-    name: "Worm Gear",
-    description: "Screw-like gears for high reduction ratios",
-    image: "/images/gears/worm-gear.jpg",
-    category: "Special Gears"
-  }
-];
-
-const GearsOverview: React.FC = () => {
+export default function BevelGear() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Gear Types</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore different types of mechanical gears and their applications
-          </p>
-        </div>
+    <div style={{ padding: "20px", lineHeight: 1.6 }}>
+      <h1>Bevel Gears</h1>
 
-        {/* Gears Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {gearTypes.map((gear) => (
-            <Card key={gear.id} className="group hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="aspect-video bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-                  {/* Placeholder for gear image */}
-                  <div className="text-gray-400 text-sm">Gear Image</div>
-                </div>
+      <p>
+        Bevel gears are gears where the teeth are cut on a conical surface.
+        They are used to transmit motion between intersecting shafts—most commonly at a 90° angle.
+        This makes them essential in machinery that needs to change the direction of rotation.
+      </p>
 
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold text-gray-900">{gear.name}</h3>
-                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                      {gear.category}
-                    </span>
-                  </div>
+      <h2>Why Bevel Gears Are Important</h2>
+      <p>
+        Bevel gears allow the transfer of power between intersecting shafts while maintaining
+        high efficiency, smooth operation, and customizable gear ratios.
+        They are used in thousands of mechanical and automotive systems.
+      </p>
 
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {gear.description}
-                  </p>
+      {/* Types of Bevel Gears */}
+      <h2>Types of Bevel Gears</h2>
+      <ul>
+        <li>
+          <strong>Straight Bevel Gears</strong> – Teeth are straight and taper toward the apex of the cone.
+          Used for low to medium speed applications.
+        </li>
 
-                  <Link to={`/topics/mechanical/gears/${gear.id}`} className="block">
-                    <Button className="w-full group-hover:bg-blue-600 transition-colors">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
+        <li>
+          <strong>Spiral Bevel Gears</strong> – Teeth are curved, offering smoother and quieter operation.
+          Ideal for high-speed and high-load systems (e.g., automotive differentials).
+        </li>
+
+        <li>
+          <strong>Zero Bevel Gears</strong> – Similar to straight bevel gears but with curved teeth that
+          do not spiral. Provides smoother operation than straight bevel but simpler than spiral.
+        </li>
+
+        <li>
+          <strong>Hypoid Gears</strong> – Similar to spiral bevel but the shafts do not intersect.
+          Used in vehicles for greater torque transfer.
+        </li>
+      </ul>
+
+      {/* Applications */}
+      <h2>Applications of Bevel Gears</h2>
+      <ul>
+        <li>Automotive differential systems</li>
+        <li>Hand drills and power tools</li>
+        <li>Industrial gearboxes</li>
+        <li>Printing press machines</li>
+        <li>Conveyor systems</li>
+        <li>Mechanical clocks and timing devices</li>
+        <li>Marine propulsion systems</li>
+        <li>Robotics arm joints requiring angular motion transfer</li>
+      </ul>
+
+      {/* Sample applications */}
+      <h2>Sample Real-World Use Cases</h2>
+      <ul>
+        <li>
+          <strong>Automotive Differential</strong><br />
+          Bevel gears allow the wheels to rotate at different speeds during cornering.
+        </li>
+
+        <li>
+          <strong>Hand Drill Mechanism</strong><br />
+          The 90-degree direction change from handle to drill bit uses bevel gears.
+        </li>
+
+        <li>
+          <strong>Conveyor Belt Direction Drive</strong><br />
+          Changing shaft direction to fit machine layout.
+        </li>
+
+        <li>
+          <strong>Robotic Rotation Joints</strong><br />
+          Used in joints requiring angled torque transfer.
+        </li>
+      </ul>
+
+      {/* Projects */}
+      <h2>Mini Projects Using Bevel Gears</h2>
+      <ol>
+        <li>
+          <strong>DIY Hand Drill</strong><br />
+          Build a simple mechanical hand drill using two bevel gears at 90°.
+        </li>
+
+        <li>
+          <strong>Mini Differential System</strong><br />
+          Create a working differential for a small robot car or RC car.
+        </li>
+
+        <li>
+          <strong>Robotic Arm Wrist Joint</strong><br />
+          Use bevel gears to allow rotation of the gripper at right angles.
+        </li>
+
+        <li>
+          <strong>Angle Drive Transmission</strong><br />
+          A simple setup to transfer motion 90 degrees between shafts using bevel gears.
+        </li>
+
+        <li>
+          <strong>Mechanical Clock Mechanism</strong><br />
+          Integrate bevel gears to change rotational axis directions.
+        </li>
+      </ol>
+
+      <p style={{ marginTop: "40px", fontStyle: "italic" }}>
+        Bevel gears are essential in mechanical and mechatronic design—understanding their
+        types and applications gives you strong foundational knowledge for robotics and
+        power transmission systems.
+      </p>
     </div>
   );
-};
-
-export default GearsOverview;
+}
