@@ -86,4 +86,4 @@ const Mechanical: React.FC = () => {
   );
 };
 
-export default Mechanical;
+export default mechanical;
