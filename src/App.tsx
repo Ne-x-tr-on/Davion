@@ -6,22 +6,22 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
 // Pages
-import Index from "./pages/Index";
-import Projects from "./pages/Projects";
-import Marketplace from "./pages/Marketplace";
-import Internships from "./pages/Internships";
-import About from "./pages/About";
-import NotFound from "./pages/NotFound";
+import Index from "./pages/index";
+import Projects from "./pages/projects";
+import Marketplace from "./pages/marketplace";
+import Internships from "./pages/internships";
+import About from "./pages/about";
+import NotFound from "./pages/notfound";
 
 // Topics
-import Topics from "./pages/topics";            // picks up index.tsx in topics folder
-import Mechanical from "./pages/Topics/Mechanical"; // hub page for mechanical
-import MechanicalGears from "./pages/Topics/mechanical/gears";
-import Electrical from "./pages/Topics/electrical";
-import Arduino from "./pages/Topics/arduino";
-import Automation from "./pages/Topics/automation";
-import Embedded from "./pages/Topics/embedded";
-import SoftwareAI from "./pages/Topics/software-ai";
+import Topics from "./pages/topics";              // index.tsx inside topics folder
+import Mechanical from "./pages/topics/mechanical"; // mechanical.tsx
+import MechanicalGears from "./pages/topics/mechanical/gears"; // gears.tsx
+import Electrical from "./pages/topics/electrical";
+import Arduino from "./pages/topics/arduino";
+import Automation from "./pages/topics/automation";
+import Embedded from "./pages/topics/embedded";
+import SoftwareAI from "./pages/topics/software-ai";
 
 // Initialize React Query client
 const queryClient = new QueryClient();

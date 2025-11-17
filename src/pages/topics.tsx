@@ -29,7 +29,7 @@ const Topics: React.FC = () => {
           Topics
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-          {/* Explore various engineering disciplines and technologies through our comprehensive tutorials and resources */}
+          Explore various engineering disciplines and technologies through our comprehensive tutorials and resources
         </p>
       </div>
 
