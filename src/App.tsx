@@ -14,14 +14,15 @@ import About from "./pages/about";
 import NotFound from "./pages/notfound";
 
 // Topics
-import Topics from "./pages/topics";              // index.tsx inside topics folder
-import Mechanical from "./pages/topics/mechanical"; // mechanical.tsx
-import MechanicalGears from "./pages/topics/mechanical/gears"; // gears.tsx
+import Topics from "./pages/topics";
+import Mechanical from "./pages/topics/mechanical";
+import MechanicalGears from "./pages/topics/mechanical/gears";
 import Electrical from "./pages/topics/electrical";
 import Arduino from "./pages/topics/arduino";
 import Automation from "./pages/topics/automation";
 import Embedded from "./pages/topics/embedded";
 import SoftwareAI from "./pages/topics/software-ai";
+
 
 // Initialize React Query client
 const queryClient = new QueryClient();
