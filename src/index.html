@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reqon Login</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #e0f0ff, #f0f8ff);
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0077cc;
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to Reqon</h2>
+    <div id="error" class="error"></div>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    // Dummy user database for demonstration
+    const users = [
+      { email: "alice@company.com", password: "123456", role: "HR" },
+      { email: "bob@company.com", password: "123456", role: "Safety" },
+      { email: "carol@company.com", password: "123456", role: "Engineering" },
+      { email: "dave@company.com", password: "123456", role: "Production" },
+      { email: "admin@company.com", password: "admin123", role: "SuperAdmin" },
+      { email: "user@company.com", password: "user123", role: "Staff" }
+    ];
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const errorDiv = document.getElementById("error");
+
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (!user) {
+        errorDiv.textContent = "Invalid email or password";
+        return;
+      }
+
+      errorDiv.textContent = "";
+
+      // Redirect based on role
+      switch(user.role) {
+        case "HR":
+          alert("Redirecting to HR Dashboard");
+          window.location.href = "dashboard/hr.html";
+          break;
+        case "Safety":
+          alert("Redirecting to Safety Dashboard");
+          window.location.href = "dashboard/safety.html";
+          break;
+        case "Engineering":
+          alert("Redirecting to Engineering Dashboard");
+          window.location.href = "dashboard/engineering.html";
+          break;
+        case "Production":
+          alert("Redirecting to Production Dashboard");
+          window.location.href = "dashboard/production.html";
+          break;
+        case "SuperAdmin":
+          alert("Redirecting to Admin Dashboard");
+          window.location.href = "dashboard/admin.html";
+          break;
+        default:
+          alert("Redirecting to Staff Dashboard");
+          window.location.href = "dashboard/staff.html";
+      }
+    }
+  </script>
+</body>
+</html>
