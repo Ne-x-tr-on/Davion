@@ -13,21 +13,18 @@ import Internships from "./pages/internships";
 import About from "./pages/about";
 import NotFound from "./pages/notfound";
 
+// AMSR Project
+import AMSRProject from "./pages/projects/amsr";
+import AMSRDocs from "./pages/projects/amsr/docs";
 
 // Topics
-// import Topics from "./pages/topics";
 import Mechanical from "./pages/topics/mechanical";
 import MechanicalGears from "./pages/topics/mechanical/gears";
-
-
-
 import Electrical from "./pages/topics/electrical";
 import Arduino from "./pages/topics/arduino";
 import Automation from "./pages/topics/automation";
 import Embedded from "./pages/topics/embedded";
 import SoftwareAI from "./pages/topics/software-ai";
-
-
 
 // Initialize React Query client
 const queryClient = new QueryClient();
@@ -48,8 +45,11 @@ const App: React.FC = () => {
             <Route path="/internships" element={<Internships />} />
             <Route path="/about" element={<About />} />
 
+            {/* AMSR Project */}
+            <Route path="/projects/amsr" element={<AMSRProject />} />
+            <Route path="/projects/amsr/docs" element={<AMSRDocs />} />
+
             {/* Topics */}
-            <Route path="/topics" element={<Topics />} />
             <Route path="/topics/mechanical" element={<Mechanical />} />
             <Route path="/topics/mechanical/gears" element={<MechanicalGears />} />
             <Route path="/topics/electrical" element={<Electrical />} />
@@ -68,4 +68,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
