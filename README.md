@@ -72,8 +72,8 @@ Davion is a **comprehensive platform** designed to empower students, engineers, 
 ## Contact
 
 - **Author:** Newton Manyeki Kamau  
-- **Email:** [your.email@example.com](mailto:26nextron.dev@gmail.com)  
-- **Portfolio:** [your-portfolio-link](https://engnewtonkamau.netlify.app.com)
+- **Email:** (mailto:26nextron.dev@gmail.com)  
+- **Portfolio:** (https://engnewtonkamau.netlify.app.com)
 
 
 ```sh
