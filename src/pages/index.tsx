@@ -7,8 +7,18 @@ import { ArrowRight, Rocket, Users, Briefcase, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Index = () => {
-  // Mock data for projects
+  // Mock data for projects - AMSR featured first
   const projects = [
+    {
+      title: "Autonomous Mobile Service Robot (AMSR)",
+      description: "Modular autonomous robot for deliveries and service tasks at Kiambu National Polytechnic",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop",
+      category: "Robotics",
+      views: 3456,
+      likes: 234,
+      author: "AMSR Team",
+      link: "/projects/amsr",
+    },
     {
       title: "Smart Home Automation System",
       description: "IoT-based home automation with voice control and mobile app integration",
@@ -26,15 +36,6 @@ const Index = () => {
       views: 2156,
       likes: 143,
       author: "James Wilson",
-    },
-    {
-      title: "Sustainable Energy Monitor",
-      description: "Real-time energy consumption tracking and optimization system",
-      image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop",
-      category: "Green Tech",
-      views: 987,
-      likes: 67,
-      author: "Maria Garcia",
     },
   ];
 

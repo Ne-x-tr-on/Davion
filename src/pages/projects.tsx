@@ -9,6 +9,16 @@ const Projects = () => {
   // Mock data for projects
   const allProjects = [
     {
+      title: "Autonomous Mobile Service Robot (AMSR)",
+      description: "Modular autonomous robot for deliveries and service tasks at Kiambu National Polytechnic",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop",
+      category: "Robotics",
+      views: 3456,
+      likes: 234,
+      author: "AMSR Team",
+      link: "/projects/amsr",
+    },
+    {
       title: "Smart Home Automation System",
       description: "IoT-based home automation with voice control and mobile app integration",
       image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&auto=format&fit=crop",
